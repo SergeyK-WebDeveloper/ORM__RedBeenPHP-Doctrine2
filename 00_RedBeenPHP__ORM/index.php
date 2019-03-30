@@ -4,16 +4,39 @@
 //R::setup();
 
 require_once __DIR__ . '/vendor/autoload.php';
+
+function debug($data){
+    echo '<pre>' . print_r($data, 1) . '</pre>';
+}
+
 //\RedbeanPHP\R::setup();
 //\RedBeanPHP\R::setup();
 //use \RedBeanPHP\R as R;
 class_alias('\RedBeanPHP\R', '\R');
 
+//R::setup( 'mysql:host=localhost;dbname=test', 'root', '', true );
 R::setup( 'mysql:host=localhost;dbname=test', 'root', '' );
-//R::setup( 'sqlite:dbfile.db' );
+
+R::freeze(true);
 
 if( !R::testConnection() ){
     die('No DB Connection');
 }
 
-echo 'OK';
+// CRUD: Create
+$book = R::dispense('book');
+//$book->title = 'Три мушкетера';
+//$book->price = 29.99;
+
+//$book->title = 'Пикник на обочине';
+//$book['price'] = 25;
+//$book->author = 'Братья Стругацкие';
+
+$test = R::dispense('test');
+$test->category_id = 5;
+$test->title = 'Test Title 4';
+$test->tT2 = 'Test Title 4';
+R::store($test);
+
+//R::store($book);
+//debug($book);
