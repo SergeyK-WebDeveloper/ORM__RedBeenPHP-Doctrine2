@@ -17,7 +17,7 @@ class_alias('\RedBeanPHP\R', '\R');
 //R::setup( 'mysql:host=localhost;dbname=test', 'root', '', true );
 R::setup( 'mysql:host=localhost;dbname=test', 'root', '' );
 
-R::freeze(true);
+//R::freeze(true);
 
 if( !R::testConnection() ){
     die('No DB Connection');
@@ -32,7 +32,11 @@ $book = R::dispense('book');
 //$book['price'] = 25;
 //$book->author = 'Братья Стругацкие';
 
-$test = R::dispense('test');
+R::ext('xdispense', function( $type ){
+    return R::getRedBean()->dispense( $type );
+});
+
+$test = R::xdispense('test_table');
 $test->category_id = 5;
 $test->title = 'Test Title 4';
 $test->tT2 = 'Test Title 4';
