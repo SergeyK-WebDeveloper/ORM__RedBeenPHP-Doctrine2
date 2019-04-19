@@ -14,27 +14,44 @@ if( !R::testConnection() ){
     die('No DB Connection');
 }
 
-// CRUD: Read
-//$book = R::load('book', 1);
-//echo $book['title'];
-//echo $book->title;
-/*debug($book);
-$book = $book->export();
-debug($book);*/
 
-/*$books = R::loadAll('book', [1,2]);
-//debug($books);
-foreach($books as $book){
-    echo $book->title . '<br>';
-}*/
+/*$book = R::dispense('book');
+$book->title = 'Test Book 4';
+$book->price = 10;
+$book->author = 'Author 4';
+R::store($book);*/
 
-// CRUD: Update
-$book = R::load('book', 1);
-$book->author = 'А. Дюма';
-R::store($book);
+/*$book = R::load('book', 4);
+R::trash($book);*/
+/*$books = R::loadAll('book', [3,5]);
+R::trashAll($books);*/
 
+//R::trashBatch('book', [6,7]);
 
+//R::wipe('book');
 
+//R::freeze(false);
+//R::nuke();
+
+/*
+ *
+ * CREATE TABLE `book` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `author` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `book`
+--
+
+INSERT INTO `book` (`id`, `title`, `price`, `author`) VALUES
+(1, 'Три мушкетера', '29.99', 'А. Дюма'),
+(2, 'Пикник на обочине', '25.00', 'Братья Стругацкие');
+ *
+ *
+ */
 
 
 
