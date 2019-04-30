@@ -15,23 +15,34 @@ if( !R::testConnection() ){
 }
 
 
-/*$book = R::dispense('book');
-$book->title = 'Test Book 4';
-$book->price = 10;
-$book->author = 'Author 4';
-R::store($book);*/
+/*for($i = 1; $i < 11; $i++){
+    $book = R::dispense('book');
+    $book->title = "Test Book $i";
+    $book->price = $i;
+    $book->author = "Author $i";
+    R::store($book);
+}*/
 
-/*$book = R::load('book', 4);
-R::trash($book);*/
-/*$books = R::loadAll('book', [3,5]);
-R::trashAll($books);*/
+//$books = R::find('book', 'price > ?', [9]);
+//$books = R::find('book', 'author LIKE ?', ['%th%']);
+//$books = R::find('book', 'id > ? AND price < ?', [2, 6]);
+//$books = R::find('book', 'id > :id AND price < :price', [':price' => 6, ':id' => 2]);
 
-//R::trashBatch('book', [6,7]);
+//$ids = [1,3,5];
+//$books = R::find('book', 'id IN (?, ?, ?)', $ids);
+//$books = R::find('book', 'id IN (' . R::genSlots($ids) . ')', $ids);
+//echo count($books);
+//debug($books);
 
-//R::wipe('book');
+//$book = R::findOne('book', 'title = ?', ['Пикник на обочине']);
+//debug($book);
 
-//R::freeze(false);
-//R::nuke();
+//$books = R::findAll('book');
+/*$books = R::findAll('book', 'ORDER BY id DESC LIMIT 3,3');
+echo count($books);
+debug($books);*/
+
+R::hunt('book', 'id > ?', [2]);
 
 /*
  *
@@ -49,6 +60,26 @@ R::trashAll($books);*/
 INSERT INTO `book` (`id`, `title`, `price`, `author`) VALUES
 (1, 'Три мушкетера', '29.99', 'А. Дюма'),
 (2, 'Пикник на обочине', '25.00', 'Братья Стругацкие');
+
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `book`
+--
+ALTER TABLE `book`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `book`
+--
+ALTER TABLE `book`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
  *
  *
  */
