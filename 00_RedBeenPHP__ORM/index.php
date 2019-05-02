@@ -22,27 +22,48 @@ if( !R::testConnection() ){
     $book->author = "Author $i";
     R::store($book);
 }*/
+/*R::freeze(false);
+for($i = 1; $i < 4; $i++){
+    $book = R::dispense('category');
+    $book->title = "Test Category $i";
+    $book->book_id = $i;
+    R::store($book);
+}*/
 
-//$books = R::find('book', 'price > ?', [9]);
-//$books = R::find('book', 'author LIKE ?', ['%th%']);
-//$books = R::find('book', 'id > ? AND price < ?', [2, 6]);
-//$books = R::find('book', 'id > :id AND price < :price', [':price' => 6, ':id' => 2]);
+$beans = R::findMulti( 'book,category', '
+        SELECT book.*, category.* FROM book
+        INNER JOIN category ON category.book_id = book.id
+        WHERE book.id = ?
+    ', [2] );
+debug($beans);
 
-//$ids = [1,3,5];
-//$books = R::find('book', 'id IN (?, ?, ?)', $ids);
-//$books = R::find('book', 'id IN (' . R::genSlots($ids) . ')', $ids);
-//echo count($books);
-//debug($books);
+/*$book = R::findOrCreate('book', [
+    'title' => 'Test Book 11',
+    'price' => 11,
+    'author' => 'Author 11',
+]);
+debug($book);*/
 
-//$book = R::findOne('book', 'title = ?', ['Пикник на обочине']);
-//debug($book);
 
-//$books = R::findAll('book');
-/*$books = R::findAll('book', 'ORDER BY id DESC LIMIT 3,3');
-echo count($books);
+
+/*$books = R::findLike('book',
+    ['author' => ['А. Дюма', 'Братья Стругацкие']],
+    'ORDER BY id DESC'
+);
 debug($books);*/
 
-R::hunt('book', 'id > ?', [2]);
+/*$books = R::findAll('book');
+debug($books);*/
+
+/*$collection = R::findCollection('book');
+//debug($collection);
+while($item = $collection->next()){
+    //debug($item);
+    $item->price = 11;
+    R::store($item);
+}*/
+
+
 
 /*
  *

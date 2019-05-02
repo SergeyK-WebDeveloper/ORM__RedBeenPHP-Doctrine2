@@ -15,9 +15,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="227">
+              <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+              <folding>
+                <marker date="1527414167866" expanded="true" signature="698:817" ph="SELECT book.... book" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,15 +194,15 @@
       <workItem from="1525159337480" duration="624000" />
       <workItem from="1526810342427" duration="4065000" />
       <workItem from="1527231999324" duration="654000" />
-      <workItem from="1527405328349" duration="3392000" />
+      <workItem from="1527405328349" duration="8500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14438000" />
+    <option name="totallyTimeSpent" value="19546000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="618" y="249" width="1294" height="727" extended-state="1" />
+    <frame x="618" y="249" width="1294" height="727" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20340356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -240,36 +242,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1527414167866" expanded="true" signature="698:817" ph="SELECT book.... book" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/gabordemooij/redbean/RedBeanPHP/Cursor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/vendor/gabordemooij/redbean/RedBeanPHP/BeanCollection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="298">
+          <caret line="73" column="37" lean-forward="false" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/gabordemooij/redbean/RedBeanPHP/Facade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="1808" column="48" lean-forward="false" selection-start-line="1808" selection-start-column="48" selection-end-line="1808" selection-end-column="48" />
+        <state relative-caret-position="452">
+          <caret line="2288" column="27" lean-forward="false" selection-start-line="2288" selection-start-column="27" selection-end-line="2288" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230">
-          <caret line="13059" column="11" lean-forward="false" selection-start-line="13059" selection-start-column="8" selection-end-line="13059" selection-end-column="11" />
+        <state relative-caret-position="222">
+          <caret line="13669" column="61" lean-forward="true" selection-start-line="13669" selection-start-column="61" selection-end-line="13669" selection-end-column="61" />
           <folding>
             <marker date="1522583500000" expanded="true" signature="7400:7409" ph="..." />
             <marker date="1522583500000" expanded="true" signature="8067:8078" ph="..." />
@@ -324,9 +344,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="227">
+          <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding>
+            <marker date="1527414167866" expanded="true" signature="698:817" ph="SELECT book.... book" />
+          </folding>
         </state>
       </provider>
     </entry>
