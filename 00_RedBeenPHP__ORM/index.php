@@ -14,54 +14,30 @@ if( !R::testConnection() ){
     die('No DB Connection');
 }
 
+R::debug(1);
 
-/*for($i = 1; $i < 11; $i++){
-    $book = R::dispense('book');
-    $book->title = "Test Book $i";
-    $book->price = $i;
-    $book->author = "Author $i";
-    R::store($book);
-}*/
-/*R::freeze(false);
-for($i = 1; $i < 4; $i++){
-    $book = R::dispense('category');
-    $book->title = "Test Category $i";
-    $book->book_id = $i;
-    R::store($book);
-}*/
+//var_dump(R::exec("UPDATE book SET author = ? WHERE id = ?", ['New Author', 5]));
+//var_dump(R::exec("UPDATE book SET author = ? WHERE id IN (?,?)", ['Test Author', 3,7]));
 
-$beans = R::findMulti( 'book,category', '
-        SELECT book.*, category.* FROM book
-        INNER JOIN category ON category.book_id = book.id
-        WHERE book.id = ?
-    ', [2] );
-debug($beans);
+//$books = R::getAll("SELECT * FROM book");
+//$books = R::getAll("SELECT * FROM book WHERE id < ?", [3]);
 
-/*$book = R::findOrCreate('book', [
-    'title' => 'Test Book 11',
-    'price' => 11,
-    'author' => 'Author 11',
-]);
-debug($book);*/
+//$book = R::getRow("SELECT * FROM book LIMIT 2,1");
+//$books = R::getCol('SELECT title FROM book');
+//$book = R::getCell("SELECT title FROM book LIMIT 1");
 
+//$books = R::getAll("SELECT id, title FROM book");
+//$books = R::getAssoc("SELECT id, title, price FROM book");
 
+/*$res = R::exec("INSERT INTO book (title, author, price) VALUES (?,?,?)", ['New Book', 'New Author', 10]);
+//debug($res);
+$id = R::getInsertID();
+debug($id);*/
 
-/*$books = R::findLike('book',
-    ['author' => ['А. Дюма', 'Братья Стругацкие']],
-    'ORDER BY id DESC'
-);
-debug($books);*/
+$books = R::getAll("SELECT * FROM book");
+$books = R::convertToBeans('book', $books);
 
-/*$books = R::findAll('book');
-debug($books);*/
-
-/*$collection = R::findCollection('book');
-//debug($collection);
-while($item = $collection->next()){
-    //debug($item);
-    $item->price = 11;
-    R::store($item);
-}*/
+debug($books);
 
 
 
