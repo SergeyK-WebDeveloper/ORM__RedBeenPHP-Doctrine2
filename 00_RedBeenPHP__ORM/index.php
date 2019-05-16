@@ -14,31 +14,46 @@ if( !R::testConnection() ){
     die('No DB Connection');
 }
 
-R::debug(1);
+/*$data = R::getLook()->look(
+    "SELECT * FROM book",
+    [],
+    ['id', 'title'],
+    '<option value="%s">%s</option>', 'trim', "\n"
+);*/
 
-//var_dump(R::exec("UPDATE book SET author = ? WHERE id = ?", ['New Author', 5]));
-//var_dump(R::exec("UPDATE book SET author = ? WHERE id IN (?,?)", ['Test Author', 3,7]));
+/*$data = R::getLook()->look(
+    "SELECT * FROM book",
+    [],
+    ['id', 'title'],
+    '<li data-id="%s">%s</li>'
+);
 
-//$books = R::getAll("SELECT * FROM book");
-//$books = R::getAll("SELECT * FROM book WHERE id < ?", [3]);
+echo "<ul>$data</ul>";*/
 
-//$book = R::getRow("SELECT * FROM book LIMIT 2,1");
-//$books = R::getCol('SELECT title FROM book');
-//$book = R::getCell("SELECT title FROM book LIMIT 1");
+/*$didChangeAuthor = R::matchUp(
+    'book',
+    ' title = ? ',
+    ['New Book'],
+    [
+        'author' => 'Author!!!',
+        'title' => 'New Book!!!',
+    ],
+    [
+        'title' => 'New Book!',
+        'author' => 'Author!',
+        'price' => 13,
+    ],
+    $book
+);
 
-//$books = R::getAll("SELECT id, title FROM book");
-//$books = R::getAssoc("SELECT id, title, price FROM book");
+debug($book);*/
 
-/*$res = R::exec("INSERT INTO book (title, author, price) VALUES (?,?,?)", ['New Book', 'New Author', 10]);
-//debug($res);
-$id = R::getInsertID();
-debug($id);*/
-
-$books = R::getAll("SELECT * FROM book");
-$books = R::convertToBeans('book', $books);
-
-debug($books);
-
+R::csv('SELECT * FROM book',
+        [],
+        ['ID', 'Title', 'Author', 'Price'],
+        __DIR__ . '/file.csv',
+        false
+);
 
 
 /*

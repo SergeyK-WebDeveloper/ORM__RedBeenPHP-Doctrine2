@@ -11,24 +11,16 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="264">
+              <caret line="51" column="11" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
               <folding>
-                <marker date="1528614634419" expanded="true" signature="328:367" ph="UPDATE book " />
-                <marker date="1528614634419" expanded="true" signature="411:455" ph="UPDATE book " />
-                <marker date="1528614634419" expanded="true" signature="505:523" ph="SELECT * FRO... book" />
-                <marker date="1528614634419" expanded="true" signature="549:580" ph="SELECT * FRO... book" />
-                <marker date="1528614634419" expanded="true" signature="611:639" ph="SELECT * FRO... book" />
-                <marker date="1528614634419" expanded="true" signature="665:687" ph="SELECT title... book" />
-                <marker date="1528614634419" expanded="true" signature="713:743" ph="SELECT title... book" />
-                <marker date="1528614634419" expanded="true" signature="770:796" ph="SELECT id, t... book" />
-                <marker date="1528614634419" expanded="true" signature="824:857" ph="SELECT id, t... book" />
-                <marker date="1528614634419" expanded="true" signature="880:934" ph="INSERT INTO book... " />
-                <marker date="1528614634419" expanded="true" signature="1044:1062" ph="SELECT * FRO... book" />
+                <marker date="1529144315781" expanded="true" signature="329:347" ph="SELECT * FRO... book" />
+                <marker date="1529144315781" expanded="true" signature="471:489" ph="SELECT * FRO... book" />
+                <marker date="1529144315781" expanded="true" signature="882:900" ph="SELECT * FRO... book" />
               </folding>
             </state>
           </provider>
@@ -82,6 +74,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -97,7 +90,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,18 +204,18 @@
       <workItem from="1527231999324" duration="654000" />
       <workItem from="1527405328349" duration="8568000" />
       <workItem from="1527517719665" duration="20000" />
-      <workItem from="1528612856594" duration="1777000" />
+      <workItem from="1528612856594" duration="2013000" />
+      <workItem from="1529142659800" duration="1749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21411000" />
+    <option name="totallyTimeSpent" value="23396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="618" y="249" width="1294" height="727" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20988655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21312805" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -261,17 +253,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1528614634419" expanded="true" signature="328:367" ph="UPDATE book " />
-            <marker date="1528614634419" expanded="true" signature="411:455" ph="UPDATE book " />
-            <marker date="1528614634419" expanded="true" signature="505:523" ph="SELECT * FRO... book" />
-            <marker date="1528614634419" expanded="true" signature="549:580" ph="SELECT * FRO... book" />
-            <marker date="1528614634419" expanded="true" signature="611:639" ph="SELECT * FRO... book" />
-            <marker date="1528614634419" expanded="true" signature="665:687" ph="SELECT title... book" />
-            <marker date="1528614634419" expanded="true" signature="713:743" ph="SELECT title... book" />
-            <marker date="1528614634419" expanded="true" signature="770:796" ph="SELECT id, t... book" />
-            <marker date="1528614634419" expanded="true" signature="824:857" ph="SELECT id, t... book" />
-            <marker date="1528614634419" expanded="true" signature="880:934" ph="INSERT INTO book... " />
-            <marker date="1528614634419" expanded="true" signature="1044:1062" ph="SELECT * FRO... book" />
+            <marker date="1529144315781" expanded="true" signature="329:347" ph="SELECT * FRO... book" />
+            <marker date="1529144315781" expanded="true" signature="471:489" ph="SELECT * FRO... book" />
+            <marker date="1529144315781" expanded="true" signature="882:900" ph="SELECT * FRO... book" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1529144315781" expanded="true" signature="329:347" ph="SELECT * FRO... book" />
+            <marker date="1529144315781" expanded="true" signature="471:489" ph="SELECT * FRO... book" />
+            <marker date="1529144315781" expanded="true" signature="882:900" ph="SELECT * FRO... book" />
           </folding>
         </state>
       </provider>
@@ -312,10 +308,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/gabordemooij/redbean/RedBeanPHP/Util/Look.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="89" column="172" lean-forward="true" selection-start-line="89" selection-start-column="172" selection-end-line="89" selection-end-column="172" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="1102" column="11" lean-forward="false" selection-start-line="1102" selection-start-column="11" selection-end-line="1102" selection-end-column="11" />
+        <state relative-caret-position="210">
+          <caret line="13910" column="123" lean-forward="false" selection-start-line="13910" selection-start-column="122" selection-end-line="13910" selection-end-column="123" />
           <folding>
             <marker date="1522583500000" expanded="true" signature="7400:7409" ph="..." />
             <marker date="1522583500000" expanded="true" signature="8067:8078" ph="..." />
@@ -370,20 +374,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="264">
+          <caret line="51" column="11" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
           <folding>
-            <marker date="1528614634419" expanded="true" signature="328:367" ph="UPDATE book " />
-            <marker date="1528614634419" expanded="true" signature="411:455" ph="UPDATE book " />
-            <marker date="1528614634419" expanded="true" signature="505:523" ph="SELECT * FRO... book" />
-            <marker date="1528614634419" expanded="true" signature="549:580" ph="SELECT * FRO... book" />
-            <marker date="1528614634419" expanded="true" signature="611:639" ph="SELECT * FRO... book" />
-            <marker date="1528614634419" expanded="true" signature="665:687" ph="SELECT title... book" />
-            <marker date="1528614634419" expanded="true" signature="713:743" ph="SELECT title... book" />
-            <marker date="1528614634419" expanded="true" signature="770:796" ph="SELECT id, t... book" />
-            <marker date="1528614634419" expanded="true" signature="824:857" ph="SELECT id, t... book" />
-            <marker date="1528614634419" expanded="true" signature="880:934" ph="INSERT INTO book... " />
-            <marker date="1528614634419" expanded="true" signature="1044:1062" ph="SELECT * FRO... book" />
+            <marker date="1529144315781" expanded="true" signature="329:347" ph="SELECT * FRO... book" />
+            <marker date="1529144315781" expanded="true" signature="471:489" ph="SELECT * FRO... book" />
+            <marker date="1529144315781" expanded="true" signature="882:900" ph="SELECT * FRO... book" />
           </folding>
         </state>
       </provider>
