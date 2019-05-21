@@ -9,51 +9,48 @@ function debug($data){
 class_alias('\RedBeanPHP\R', '\R');
 
 R::setup( 'mysql:host=localhost;dbname=test', 'root', '', true );
+R::addDatabase('db2', 'mysql:host=localhost;dbname=bt_loc', 'root', '', true);
 
 if( !R::testConnection() ){
     die('No DB Connection');
 }
 
-/*$data = R::getLook()->look(
-    "SELECT * FROM book",
-    [],
-    ['id', 'title'],
-    '<option value="%s">%s</option>', 'trim', "\n"
-);*/
+//$fields = R::inspect('book');
+/*$tables = R::inspect();
+debug($tables);
 
-/*$data = R::getLook()->look(
-    "SELECT * FROM book",
-    [],
-    ['id', 'title'],
-    '<li data-id="%s">%s</li>'
-);
+R::selectDatabase('db2');
 
-echo "<ul>$data</ul>";*/
+$tables = R::inspect();
+debug($tables);
 
-/*$didChangeAuthor = R::matchUp(
-    'book',
-    ' title = ? ',
-    ['New Book'],
-    [
-        'author' => 'Author!!!',
-        'title' => 'New Book!!!',
-    ],
-    [
-        'title' => 'New Book!',
-        'author' => 'Author!',
-        'price' => 13,
-    ],
-    $book
-);
+R::selectDatabase('default');
 
-debug($book);*/
+$tables = R::inspect();
+debug($tables);*/
 
-R::csv('SELECT * FROM book',
-        [],
-        ['ID', 'Title', 'Author', 'Price'],
-        __DIR__ . '/file.csv',
-        false
-);
+$cat = R::dispense('category');
+$book = R::dispense('book');
+
+$cat->title = 'test cat';
+$cat->book_id = 1;
+
+$book->title = '111';
+$book->author = '222';
+$book->price = 20;
+
+//R::store($cat);
+//R::store($book);
+
+R::begin();
+try{
+    R::store($cat);
+    R::store($book);
+    R::commit();
+}catch (Exception $e){
+    R::rollback();
+    echo $e->getMessage();
+}
 
 
 /*
