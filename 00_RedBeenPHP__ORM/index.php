@@ -15,42 +15,18 @@ if( !R::testConnection() ){
     die('No DB Connection');
 }
 
-//$fields = R::inspect('book');
-/*$tables = R::inspect();
-debug($tables);
+R::debug(1, 3);
 
-R::selectDatabase('db2');
+$book = R::findOne('book');
+$books_title = R::getCol('SELECT title FROM book');
+R::exec("INSERT INTO category (title, book_id) VALUES (?, ?)", ['1', '2']);
 
-$tables = R::inspect();
-debug($tables);
+$logs = R::getDatabaseAdapter()
+    ->getDatabase()
+    ->getLogger();
 
-R::selectDatabase('default');
-
-$tables = R::inspect();
-debug($tables);*/
-
-$cat = R::dispense('category');
-$book = R::dispense('book');
-
-$cat->title = 'test cat';
-$cat->book_id = 1;
-
-$book->title = '111';
-$book->author = '222';
-$book->price = 20;
-
-//R::store($cat);
-//R::store($book);
-
-R::begin();
-try{
-    R::store($cat);
-    R::store($book);
-    R::commit();
-}catch (Exception $e){
-    R::rollback();
-    echo $e->getMessage();
-}
+debug( $logs->grep('INSERT') );
+debug( $logs->grep('SELECT') );
 
 
 /*
