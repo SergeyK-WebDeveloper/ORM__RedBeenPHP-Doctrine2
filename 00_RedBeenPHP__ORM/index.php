@@ -8,8 +8,7 @@ function debug($data){
 
 class_alias('\RedBeanPHP\R', '\R');
 
-R::setup( 'mysql:host=localhost;dbname=test', 'root', '', true );
-R::addDatabase('db2', 'mysql:host=localhost;dbname=bt_loc', 'root', '', true);
+R::setup( 'mysql:host=localhost;dbname=test', 'root', '', false );
 
 if( !R::testConnection() ){
     die('No DB Connection');
@@ -17,9 +16,82 @@ if( !R::testConnection() ){
 
 R::debug(1, 3);
 
-$book = R::findOne('book');
-$books_title = R::getCol('SELECT title FROM book');
-R::exec("INSERT INTO category (title, book_id) VALUES (?, ?)", ['1', '2']);
+// https://habr.com/post/193380/
+// http://jtest.ru/bazyi-dannyix/sql-dlya-nachinayushhix-chast-3.html
+
+// вариант без отношений RedBeanPHP
+/*$category = R::dispense('category');
+$category->title = 'Samsung';
+$id = R::store($category);
+
+$product = R::dispense('product');
+$product->title = 'S8';
+$product->category_id = $id;
+R::store($product);*/
+
+// реализация связи
+/*$category = R::dispense('category');
+$category->title = 'Apple';
+
+$product1 = R::dispense('product');
+$product1->title = 'iPhone 7';
+
+$product2 = R::dispense('product');
+$product2->title = 'iPhone 8';
+
+$category->ownProductList = [$product1, $product2];
+
+R::store($category);*/
+
+// получение собственного списка свойств
+/*$category = R::load('category', 1);
+echo "<h3>{$category->title}</h3>";
+foreach($category->ownProductList as $product){
+    echo $product->title . '<br>';
+}*/
+
+// замена свойств
+/*$category = R::load('category', 1);
+
+$product1 = R::dispense('product');
+$product1->title = 'S9';
+
+$product2 = R::dispense('product');
+$product2->title = 'S10';
+
+$category->ownProductList = [$product1, $product2];
+R::store($category);*/
+
+// добавление свойств
+/*$category = R::load('category', 1);
+
+$product1 = R::dispense('product');
+$product1->title = 'S9';
+
+$product2 = R::dispense('product');
+$product2->title = 'S10';
+
+$category->ownProductList[] = $product1;
+$category->ownProductList[] = $product2;
+R::store($category);*/
+
+// добавление свойств без загрузки имеющихся
+$category = R::load('category', 2);
+
+$product1 = R::dispense('product');
+$product1->title = 'iPhone 6';
+
+$product2 = R::dispense('product');
+$product2->title = 'iPhone 10';
+
+$category->noLoad()->ownProductList[] = $product1;
+$category->noLoad()->ownProductList[] = $product2;
+R::store($category);
+
+
+
+
+
 
 $logs = R::getDatabaseAdapter()
     ->getDatabase()
@@ -27,55 +99,7 @@ $logs = R::getDatabaseAdapter()
 
 debug( $logs->grep('INSERT') );
 debug( $logs->grep('SELECT') );
-
-
-/*
- *
- * CREATE TABLE `book` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
-  `author` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-
---
--- Дамп данных таблицы `book`
---
-
-INSERT INTO `book` (`id`, `title`, `price`, `author`) VALUES
-(1, 'Три мушкетера', '29.99', 'А. Дюма'),
-(2, 'Пикник на обочине', '25.00', 'Братья Стругацкие');
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `book`
---
-ALTER TABLE `book`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `book`
---
-ALTER TABLE `book`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
- *
- *
- */
-
-
-
-
-
-
-
-
-
+debug( $logs->grep('UPDATE') );
+debug( $logs->grep('DELETE') );
 
 
