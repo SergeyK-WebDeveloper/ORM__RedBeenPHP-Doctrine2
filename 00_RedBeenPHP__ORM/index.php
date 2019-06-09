@@ -76,7 +76,7 @@ $category->ownProductList[] = $product2;
 R::store($category);*/
 
 // добавление свойств без загрузки имеющихся
-$category = R::load('category', 2);
+/*$category = R::load('category', 2);
 
 $product1 = R::dispense('product');
 $product1->title = 'iPhone 6';
@@ -86,8 +86,41 @@ $product2->title = 'iPhone 10';
 
 $category->noLoad()->ownProductList[] = $product1;
 $category->noLoad()->ownProductList[] = $product2;
-R::store($category);
+R::store($category);*/
 
+
+// открепление свойства от родителя (без удаления)
+/*$category = R::load('category', 2);
+unset( $category->ownProductList[8] );
+R::store($category);*/
+
+
+// эксклюзивный режим (с удалением)
+/*$category = R::load('category', 2);
+unset( $category->xownProductList[8] );
+R::store($category);*/
+
+// открепление всех свойств
+/*$category = R::load('category', 2);
+$category->ownProductList = [];
+R::store($category);*/
+
+// удаление всех свойств
+/*$category = R::load('category', 2);
+$category->xownProductList = [];
+R::store($category);*/
+
+
+
+/*$category = R::load('category', 2);
+foreach($category->withCondition('id > ? ORDER BY id DESC', [2])->ownProductList as $product){
+    echo $product->title . '<br>';
+}*/
+
+//debug(R::count('product'));
+
+$category = R::load('category', 2);
+debug($category->withCondition('id > ? ORDER BY id DESC', [2])->countOwn('product'));
 
 
 
