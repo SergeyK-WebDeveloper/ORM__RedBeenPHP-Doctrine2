@@ -119,11 +119,22 @@ foreach($category->withCondition('id > ? ORDER BY id DESC', [2])->ownProductList
 
 //debug(R::count('product'));
 
-$category = R::load('category', 2);
-debug($category->withCondition('id > ? ORDER BY id DESC', [2])->countOwn('product'));
+/*$category = R::load('category', 2);
+debug($category->withCondition('id > ? ORDER BY id DESC', [2])->countOwn('product'));*/
 
+/*$product = R::dispense('product');
+$product->title = 'S11';
 
+$category = R::load('category', 1);
+$product->category = $category;
+R::store($product);*/
 
+$product = R::load('product', 10);
+//var_dump($product->exists('category'));
+/*$product->category = NULL;
+R::store($product);*/
+$product->category;
+debug($product);
 
 
 $logs = R::getDatabaseAdapter()
