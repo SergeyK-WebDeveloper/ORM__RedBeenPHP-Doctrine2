@@ -16,126 +16,33 @@ if( !R::testConnection() ){
 
 R::debug(1, 3);
 
-// https://habr.com/post/193380/
-// http://jtest.ru/bazyi-dannyix/sql-dlya-nachinayushhix-chast-3.html
 
-// вариант без отношений RedBeanPHP
-/*$category = R::dispense('category');
-$category->title = 'Samsung';
-$id = R::store($category);
+/*$category1 = R::dispense('category');
+$category1->title = 'Футболки мужские';
+
+$category2 = R::dispense('category');
+$category2->title = 'Футболки женские';*/
+
+/*$category1 = R::load('category', 1);
+//$category2 = R::load('category', 2);
 
 $product = R::dispense('product');
-$product->title = 'S8';
-$product->category_id = $id;
-R::store($product);*/
+$product->title = 'Футболка мужская';
 
-// реализация связи
-/*$category = R::dispense('category');
-$category->title = 'Apple';
+$category1->sharedProductList[] = $product;
+//$category2->sharedProductList[] = $product;
 
-$product1 = R::dispense('product');
-$product1->title = 'iPhone 7';
+R::storeAll([$category1]);*/
 
-$product2 = R::dispense('product');
-$product2->title = 'iPhone 8';
+/*$category2 = R::load('category', 2);
+$category2->sharedProductList;
+debug($category2);*/
 
-$category->ownProductList = [$product1, $product2];
+/*$product = R::load('product', 3);
+R::trash($product);*/
 
-R::store($category);*/
-
-// получение собственного списка свойств
-/*$category = R::load('category', 1);
-echo "<h3>{$category->title}</h3>";
-foreach($category->ownProductList as $product){
-    echo $product->title . '<br>';
-}*/
-
-// замена свойств
-/*$category = R::load('category', 1);
-
-$product1 = R::dispense('product');
-$product1->title = 'S9';
-
-$product2 = R::dispense('product');
-$product2->title = 'S10';
-
-$category->ownProductList = [$product1, $product2];
-R::store($category);*/
-
-// добавление свойств
-/*$category = R::load('category', 1);
-
-$product1 = R::dispense('product');
-$product1->title = 'S9';
-
-$product2 = R::dispense('product');
-$product2->title = 'S10';
-
-$category->ownProductList[] = $product1;
-$category->ownProductList[] = $product2;
-R::store($category);*/
-
-// добавление свойств без загрузки имеющихся
-/*$category = R::load('category', 2);
-
-$product1 = R::dispense('product');
-$product1->title = 'iPhone 6';
-
-$product2 = R::dispense('product');
-$product2->title = 'iPhone 10';
-
-$category->noLoad()->ownProductList[] = $product1;
-$category->noLoad()->ownProductList[] = $product2;
-R::store($category);*/
-
-
-// открепление свойства от родителя (без удаления)
-/*$category = R::load('category', 2);
-unset( $category->ownProductList[8] );
-R::store($category);*/
-
-
-// эксклюзивный режим (с удалением)
-/*$category = R::load('category', 2);
-unset( $category->xownProductList[8] );
-R::store($category);*/
-
-// открепление всех свойств
-/*$category = R::load('category', 2);
-$category->ownProductList = [];
-R::store($category);*/
-
-// удаление всех свойств
-/*$category = R::load('category', 2);
-$category->xownProductList = [];
-R::store($category);*/
-
-
-
-/*$category = R::load('category', 2);
-foreach($category->withCondition('id > ? ORDER BY id DESC', [2])->ownProductList as $product){
-    echo $product->title . '<br>';
-}*/
-
-//debug(R::count('product'));
-
-/*$category = R::load('category', 2);
-debug($category->withCondition('id > ? ORDER BY id DESC', [2])->countOwn('product'));*/
-
-/*$product = R::dispense('product');
-$product->title = 'S11';
-
-$category = R::load('category', 1);
-$product->category = $category;
-R::store($product);*/
-
-$product = R::load('product', 10);
-//var_dump($product->exists('category'));
-/*$product->category = NULL;
-R::store($product);*/
-$product->category;
-debug($product);
-
+$category2 = R::load('category', 2);
+R::trash($category2);
 
 $logs = R::getDatabaseAdapter()
     ->getDatabase()
